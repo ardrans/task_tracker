@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'is_admin']
-        
+
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -19,4 +19,11 @@ class RegisterSerializer(serializers.ModelSerializer):
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
+        fields = ['id', 'app_name', 'points', 'created_by']
+        read_only_fields = ['created_by']  # Ensure created_by is not required in input
+
+
+class ScreenshotSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Screenshot
         fields = '__all__'

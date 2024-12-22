@@ -54,6 +54,7 @@ MIDDLEWARE = [
         'corsheaders.middleware.CorsMiddleware',
 ]
 
+AUTH_USER_MODEL = 'task_tracker_app.User'
 CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
